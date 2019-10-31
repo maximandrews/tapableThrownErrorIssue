@@ -38,6 +38,7 @@ class CoolPlugin {
     const { errors, warnings } = stats.compilation;
 
     if (this.throwError && errors.length > 0) {
+      console.log();
       throw new Error();
     }
 
