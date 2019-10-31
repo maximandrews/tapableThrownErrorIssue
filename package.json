@@ -1,0 +1,15 @@
+{
+  "name": "webpackhooksissue",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Issue with webpack hooks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maxim Andrews <maximandrews@users.noreply.github.com> (http://maximandrews.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
