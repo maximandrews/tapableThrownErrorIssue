@@ -22,6 +22,7 @@ class CoolPlugin {
     compiler.hooks.invalid.tap(`CoolPlugin${this.pluginId}`, this.handleIvalidated.bind(this));
     compiler.hooks.compile.tap(`CoolPlugin${this.pluginId}`, this.handleCompile.bind(this));
     compiler.hooks.done.tap(`CoolPlugin${this.pluginId}`, this.handleDone.bind(this));
+    compiler.hooks.failed.tap(`CoolPlugin${this.pluginId}`, this.handleFailed.bind(this));
   }
 
   handleIvalidated () {
@@ -42,8 +43,12 @@ class CoolPlugin {
       throw new Error();
     }
 
-    console.log(`[${Date.now()}] CoolPlugin${this.pluginId} Done`, 'errors', errors.length, 'warnings', warnings.length);
+    console.log(`[${Date.now()}] CoolPlugin${this.pluginId}: Done`, 'errors', errors.length, 'warnings', warnings.length);
     printNewLine();
+  }
+
+  handleFailed (error) {
+    console.log(`[${Date.now()}] CoolPlugin${this.pluginId}: Failed`, 'error:', error);
   }
 }
 
